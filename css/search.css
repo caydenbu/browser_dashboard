@@ -1,0 +1,40 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 7%;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+#search-input {
+    width: 80%;
+    height: 10%;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+
+    background-color: #6e6a86;
+    box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.6);
+}
+
+.search-bookmarks {
+    width: 80%;
+    height: 10%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search-bookmark {
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 999px;
+    background-color: #6e6a86;
+    box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.4);
+}

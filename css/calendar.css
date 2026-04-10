@@ -15,13 +15,52 @@
     width: 45%;
     aspect-ratio: 1/1;
     background-color: #6e6a86;
-    font-weight: bold;
-    font-size: 100px;
-    border-radius: 20px;
+    border-radius: 10px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#hour-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#minute-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.time-lower {
+    font-size: 30px;
+    font-weight: 300;
+    height: 28%;
+    width: 90%;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 2%;
+}
+
+.time-upper {
+    font-weight: bold;
+    font-size: 100px;
+    height: 70%;
+
+    position: relative;
+    transform: translateY(15%);
 }
 
 #schedule-container {
@@ -34,8 +73,36 @@
 
 .class-card {
     width: 100%;
-    height: 20%;
+    height: 18%;
 
     background-color: #6e6a86;
     border-radius: 20px;
+    gap: 3%;
+
+    display: flex;
+}
+
+.class-card-color {
+    height: 100%;
+    width: 5%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #f7a7a7;
+}
+
+.class-card-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+}
+
+.class-card-text-name {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.class-card-text-time {
+    font-size: 25px;
+    font-weight: 300;
 }
