@@ -39,16 +39,16 @@ if (hour > 12) {
 // if time is less than ten its adds a 0 at the start, Ex: (06)
 let minute = Day.getMinutes();
 if (minute < 10) {
-    hour = "0" + minute;
+    minute = "0" + minute;
 }
 
 document.getElementById("hour").innerHTML = hour;
-document.getElementById("minute").innerHTML = Day.getMinutes();
+document.getElementById("minute").innerHTML = minute;
 
 // Day and meridiem
 document.getElementById("day").innerHTML = DAY_NAMES[Day.getDay()];
-if (Day.getHours < 12) {
-    document.getElementById("meridiem").innerHTML = "am";
+if (Day.getHours() < 12) {
+    document.getElementById("meridiem").innerHTML = "AM";
 }
 
 // Classes List
@@ -56,18 +56,21 @@ if (Day.getHours < 12) {
 // Each class has a: name, start, end, length (1,2), color
 const CALCULUS = ["Calculus II", "9:00", "9:50", 1, "#f7a7a7"];
 const CALCULUS_REC = ["Calculus II", "4:00", "5:20", 2, "#f7a7a7"];
-const BOTANY = ["BOTANY", "2:00", "2:50", 1, "#D4FBCA"];
-const BOTANY_LAB = ["BOTANY", "9:00", "12:00", 3, "#D4FBCA"];
+const BOTANY = ["Botany", "2:00", "2:50", 1, "#D4FBCA"];
+const BOTANY_LAB = ["Botany", "9:00", "12:00", 3, "#D4FBCA"];
 const ENGINEERING = ["Engineering", "4:00", "4:50", 1, "#CAF0FB"];
 const ENGINEERING_STUDIO = ["Engineering", "2:00", "3:50", 2, "#CAF0FB"];
 const INDEGINOUS_HISTORY = ["History", "12:00", "1:50", 2, "#F2EAB9"];
 
 const Classes = [
+    [CALCULUS, INDEGINOUS_HISTORY, BOTANY, ENGINEERING], // Shows Saturday as Monday
+
     [CALCULUS, INDEGINOUS_HISTORY, BOTANY, ENGINEERING], // Monday
     [BOTANY_LAB], // Tuesday
     [CALCULUS, INDEGINOUS_HISTORY, BOTANY], // Wednesday
     [ENGINEERING_STUDIO, CALCULUS_REC], // Thursday
     [CALCULUS, BOTANY, ENGINEERING], // Friday
+    [CALCULUS, INDEGINOUS_HISTORY, BOTANY, ENGINEERING], // Show Saturday is Monday
 ];
 
 // Display Classes
@@ -77,8 +80,6 @@ const TEMP_CARD = document.getElementById("temp-card");
 TEMP_CARD.remove();
 
 let DAY_OF_WEEK = Day.getDay();
-// If its the weekend set it to monday
-if (DAY_OF_WEEK > 4) DAY_OF_WEEK = 0;
 
 // class color = child(0)
 // class name = child(1,0)
