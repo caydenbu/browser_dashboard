@@ -45,6 +45,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: 0.2s ease-in-out;
+}
+
+.classes-grid-cell:hover {
+    transform: translateY(-3%);
+    cursor: pointer;
 }
 
 .classes-grid-cell p {
@@ -89,7 +95,9 @@
     height: 74%;
     padding-top: 5%;
     background-color: #5b5773;
+
     overflow-y: auto;
+    scrollbar-color: #5b5773 #6e6a86;
 
     display: flex;
     align-items: center;

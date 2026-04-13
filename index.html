@@ -9,6 +9,9 @@
     <link href="css/calendar.css" rel="stylesheet" />
     <link href="css/search.css" rel="stylesheet" />
     <link href="css/classes.css" rel="stylesheet" />
+
+    <script src="scripts/api.js" defer></script>
+    <script src="scripts/calendar.js" defer></script>
 </head>
 
 <body>
@@ -25,11 +28,11 @@
                 </div>
             </div>
             <div id="schedule-container">
-                <div class="class-card">
+                <div class="class-card" id="temp-card">
                     <div class="class-card-color"></div>
                     <div class="class-card-text">
-                        <p class="class-card-text-name">Calculus II</p>
-                        <p class="class-card-text-time">9:00-9:50</p>
+                        <p class="class-card-text-name">Temp Class</p>
+                        <p class="class-card-text-time">0:00-0:00</p>
                     </div>
                 </div>
             </div>
@@ -37,13 +40,23 @@
     </div>
     <div class="search">
         <h1 id="search-date">Today is, April 10</h1>
-        <input id="search-input" type="search" name="" value="" />
+        <input id="search-input" type="text" placeholder="Type / to search" />
         <div class="search-bookmarks">
-            <div class="search-bookmark"></div>
-            <div class="search-bookmark"></div>
-            <div class="search-bookmark"></div>
-            <div class="search-bookmark"></div>
-            <div class="search-bookmark"></div>
+            <a href="https://canvas.oregonstate.edu/" class="search-bookmark">
+                <img src="./imgs/canvas.png" alt="" width="60%" />
+            </a>
+            <a href="https://outlook.office.com/mail/" class="search-bookmark">
+                <img src="./imgs/outlook.png" alt="" width="60%" />
+            </a>
+            <a href="https://mail.google.com/mail/u/0/" class="search-bookmark">
+                <img src="./imgs/gmail.png" alt="" width="60%" />
+            </a>
+            <a href="https://calendar.google.com/calendar/u/0/r/week" class="search-bookmark">
+                <img src="./imgs/calendar.png" alt="" width="60%" />
+            </a>
+            <a href="https://github.com/caydenbu" class="search-bookmark">
+                <img src="./imgs/github.png" alt="" width="60%" />
+            </a>
         </div>
     </div>
     <div class="classes">
@@ -75,11 +88,7 @@
         </div>
         <div class="classes-assignments">
             <p class="classes-assignments-title">Assigments</p>
-            <div id="assignments-container">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <div id="assignments-container"></div>
         </div>
     </div>
 </body>

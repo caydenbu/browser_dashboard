@@ -80,6 +80,11 @@
     gap: 3%;
 
     display: flex;
+    transition: 0.3s ease-in-out;
+}
+
+.class-card:hover {
+    transform: scale(103%);
 }
 
 .class-card-color {
@@ -87,7 +92,6 @@
     width: 5%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    background-color: #f7a7a7;
 }
 
 .class-card-text {

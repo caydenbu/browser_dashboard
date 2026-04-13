@@ -8,19 +8,40 @@
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 75px;
     font-weight: bolder;
 }
 
 #search-input {
     width: 80%;
     height: 10%;
+
     border-radius: 999px;
+    padding-left: 3%;
+    padding-right: 3%;
+
     border: none;
     outline: none;
-
     background-color: #6e6a86;
     box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.6);
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+#search-input:hover {
+    box-shadow: 0px 0px 60px 4px rgba(0, 0, 0, 1);
+}
+
+#search-input::placeholder {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f2e9ff;
+}
+
+#search-input:focus {
+    box-shadow: none;
+    filter: brightness(110%);
 }
 
 .search-bookmarks {
@@ -37,4 +58,15 @@ h1 {
     border-radius: 999px;
     background-color: #6e6a86;
     box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bookmark:hover {
+    transform: scale(105%);
+    box-shadow: 0px 0px 40px 4px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
 }
