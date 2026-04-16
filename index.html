@@ -1,111 +1,88 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Dashboard</title>
-        <link href="css/style.css" rel="stylesheet" />
-        <link href="css/calendar.css" rel="stylesheet" />
-        <link href="css/search.css" rel="stylesheet" />
-        <link href="css/classes.css" rel="stylesheet" />
 
-        <script src="scripts/api.js" defer></script>
-        <script src="scripts/calendar.js" defer></script>
-        <script src="scripts/main.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/calendar.css" rel="stylesheet" />
+    <link href="css/search.css" rel="stylesheet" />
+    <link href="css/habits.css" rel="stylesheet" />
 
-    <body>
-        <div class="calendar">
-            <div class="calendar-container">
-                <div class="time-date">
-                    <div id="hour-container" class="time-box">
-                        <p id="hour" class="time-upper">12</p>
-                        <p id="meridiem" class="time-lower">PM</p>
-                    </div>
-                    <div id="minute-container" class="time-box">
-                        <p id="minute" class="time-upper">44</p>
-                        <p id="day" class="time-lower">Tuesday</p>
-                    </div>
+    <script src="scripts/api.js" defer></script>
+    <script src="scripts/calendar.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <div class="calendar">
+        <div class="calendar-container">
+            <div class="time-date">
+                <div id="hour-container" class="time-box">
+                    <p id="hour" class="time-upper">12</p>
+                    <p id="meridiem" class="time-lower">PM</p>
                 </div>
-                <div id="schedule-container">
-                    <div class="class-card" id="temp-card">
-                        <div class="class-card-color"></div>
-                        <div class="class-card-text">
-                            <p class="class-card-text-name">Temp Class</p>
-                            <p class="class-card-text-time">0:00-0:00</p>
-                        </div>
+                <div id="minute-container" class="time-box">
+                    <p id="minute" class="time-upper">44</p>
+                    <p id="day" class="time-lower">Tuesday</p>
+                </div>
+            </div>
+            <div id="schedule-container">
+                <div class="class-card" id="temp-card">
+                    <div class="class-card-color"></div>
+                    <div class="class-card-text">
+                        <p class="class-card-text-name">Temp Class</p>
+                        <p class="class-card-text-time">0:00-0:00</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="search">
-            <h1 id="search-date">Today is, April 10</h1>
-            <input
-                id="search-input"
-                type="text"
-                placeholder="Type / to search"
-            />
-            <div class="search-bookmarks">
-                <a
-                    href="https://canvas.oregonstate.edu/"
-                    class="search-bookmark"
-                >
-                    <img src="./imgs/canvas.png" alt="" width="60%" />
-                </a>
-                <a
-                    href="https://outlook.office.com/mail/"
-                    class="search-bookmark"
-                >
-                    <img src="./imgs/outlook.png" alt="" width="60%" />
-                </a>
-                <a
-                    href="https://mail.google.com/mail/u/0/"
-                    class="search-bookmark"
-                >
-                    <img src="./imgs/gmail.png" alt="" width="60%" />
-                </a>
-                <a
-                    href="https://calendar.google.com/calendar/u/0/r/week"
-                    class="search-bookmark"
-                >
-                    <img src="./imgs/calendar.png" alt="" width="60%" />
-                </a>
-                <a href="https://github.com/caydenbu" class="search-bookmark">
-                    <img src="./imgs/github.png" alt="" width="60%" />
-                </a>
-            </div>
+    </div>
+    <div class="search">
+        <h1 id="search-date">Today is, April 10</h1>
+        <input id="search-input" type="text" placeholder="Type / to search" />
+        <div class="search-bookmarks">
+            <a href="https://canvas.oregonstate.edu/" class="search-bookmark">
+                <img src="./imgs/canvas.png" alt="" width="60%" />
+            </a>
+            <a href="https://outlook.office.com/mail/" class="search-bookmark">
+                <img src="./imgs/outlook.png" alt="" width="60%" />
+            </a>
+            <a href="https://mail.google.com/mail/u/0/" class="search-bookmark">
+                <img src="./imgs/gmail.png" alt="" width="60%" />
+            </a>
+            <a href="https://calendar.google.com/calendar/u/0/r/week" class="search-bookmark">
+                <img src="./imgs/calendar.png" alt="" width="60%" />
+            </a>
+            <a href="https://github.com/caydenbu" class="search-bookmark">
+                <img src="./imgs/github.png" alt="" width="60%" />
+            </a>
         </div>
-        <div class="classes">
-            <div class="classes-title">
-                <p>Classes</p>
-                <p id="classes-term">Year 1: Spring Term</p>
-            </div>
-            <div class="classes-grid">
-                <div class="classes-grid-cell">
-                    <p class="class-cell-name">Test</p>
-                    <p class="letter">A</p>
-                    <p class="percent">92%</p>
-                </div>
-                <div class="classes-grid-cell">
-                    <p class="class-cell-name">Test</p>
-                    <p class="letter">A</p>
-                    <p class="percent">92%</p>
-                </div>
-                <div class="classes-grid-cell">
-                    <p class="class-cell-name">Test</p>
-                    <p class="letter">A</p>
-                    <p class="percent">92%</p>
-                </div>
-                <div class="classes-grid-cell">
-                    <p class="class-cell-name">Test</p>
-                    <p class="letter">A</p>
-                    <p class="percent">92%</p>
-                </div>
-            </div>
-            <div class="classes-assignments">
-                <p class="classes-assignments-title">Assigments</p>
-                <div id="assignments-container"></div>
-            </div>
+    </div>
+    <div class="habits" id="habits">
+        <div class="habits-title">Daily Habits</div>
+        <div class="habits-card">
+            <div class="habits-card-circle" onclick="CheckOffTask(1)"></div>
+            <p class="habits-card-title">Drink Water</p>
         </div>
-    </body>
+        <div class="habits-card">
+            <div class="habits-card-circle" onclick="CheckOffTask(2)"></div>
+            <p class="habits-card-title">Climb or Run</p>
+        </div>
+        <div class="habits-card">
+            <div class="habits-card-circle" onclick="CheckOffTask(3)"></div>
+            <p class="habits-card-title">Do School Work</p>
+        </div>
+        <div class="habits-card">
+            <div class="habits-card-circle" onclick="CheckOffTask(4)"></div>
+            <p class="habits-card-title">Comp Sci Work</p>
+        </div>
+        <div class="habits-card">
+            <div class="habits-card-circle" onclick="CheckOffTask(5)"></div>
+            <p class="habits-card-title">Read/Audiobook</p>
+        </div>
+    </div>
+</body>
+
 </html>

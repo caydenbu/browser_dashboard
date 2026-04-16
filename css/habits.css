@@ -1,0 +1,71 @@
+.habits-title {
+    width: 95%;
+    height: 15%;
+    background-color: #6e6a86;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+
+    font-size: 65px;
+    font-weight: bold;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.habits-card {
+    width: 100%;
+    height: 12%;
+    background-color: #6e6a86;
+    border-bottom-left-radius: 999px;
+    border-top-left-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    gap: 3%;
+    transition: 0.3s ease-in-out;
+    transform: translateX(5%);
+}
+
+.habits-card:hover {
+    transform: translateX(4%);
+}
+
+.habits-card-circle {
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 999px;
+    transition: 0.3s ease-in-out;
+    border: 9px solid #4c4a5b;
+}
+
+.habit-finished {
+    transform: translate(1%);
+}
+
+.habit-finished div {
+    background-color: #9bff82;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.habits-card-circle:hover {
+    transform: scale(110%);
+    background-color: #71c85a;
+    border: 9px solid #4c4a5b;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.habit-finished div:hover {
+    background-color: #9bff82;
+    transform: scale(105%);
+    cursor: default;
+}
+
+.habits-card-title {
+    font-size: 36px;
+    font-weight: bold;
+}

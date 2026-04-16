@@ -1,3 +1,4 @@
+// Input Logic
 const input = document.getElementById("search-input");
 
 document.addEventListener("keydown", (e) => {
@@ -19,3 +20,50 @@ input.addEventListener("keydown", (e) => {
         }
     }
 });
+
+// Tasks Logic
+
+const today = new Date().toISOString().split("T")[0];
+
+let data = JSON.parse(localStorage.getItem("dailyTasks")) || {
+    lastReset: today,
+    tasks: [
+        { text: "Drink Water", done: false },
+        { text: "Climb or Run", done: false },
+        { text: "Do School Work", done: false },
+        { text: "Comp sci Work", done: false },
+        { text: "Read/Audiobook", done: false },
+    ],
+};
+
+// check if new day
+if (data.lastReset !== today) {
+    data.tasks.forEach((task) => (task.done = false));
+    data.lastReset = today;
+}
+
+// save updated version
+localStorage.setItem("dailyTasks", JSON.stringify(data));
+
+// Task Checkoff
+function CheckOffTask(index) {
+    data.tasks[index - 1].done = true;
+    localStorage.setItem("dailyTasks", JSON.stringify(data));
+
+    // Changes element status
+    const HABIT_CARD = document.getElementById("habits").children[index];
+    HABIT_CARD.classList.add("habit-finished");
+}
+
+// Update completed tasks elemenets on update
+function UpdateCompletedTasks(tasks) {
+    tasks.forEach((task, index) => {
+        if (task.done) {
+            const HABIT_CARD =
+                document.getElementById("habits").children[index + 1];
+            HABIT_CARD.classList.add("habit-finished");
+        }
+    });
+}
+
+UpdateCompletedTasks(data.tasks);
