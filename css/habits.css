@@ -43,6 +43,10 @@
 }
 
 .habit-finished {
+    transform: translate(1%);
+}
+
+.habit-finished div {
     background-color: #9bff82;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
 }
@@ -55,7 +59,7 @@
     cursor: pointer;
 }
 
-.habit-finished:hover {
+.habit-finished div:hover {
     background-color: #9bff82;
     transform: scale(105%);
     cursor: default;

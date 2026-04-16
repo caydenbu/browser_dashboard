@@ -6,7 +6,6 @@
     color: #f2e9ff;
     font-family: Lexend Deca;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 body {
@@ -40,4 +39,5 @@ body {
     align-items: flex-end;
     justify-content: space-evenly;
     flex-direction: column;
+    overflow: hidden;
 }

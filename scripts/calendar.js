@@ -1,4 +1,5 @@
 // All time and date functions
+const Day = new Date();
 
 const MONTH_NAMES = [
     "January",
