@@ -36,6 +36,11 @@ let data = JSON.parse(localStorage.getItem("dailyTasks")) || {
     ],
 };
 
+function ResetData() {
+    data.tasks.forEach((task) => (task.done = false));
+    localStorage.setItem("dailyTasks", JSON.stringify(data));
+}
+
 // check if new day
 if (data.lastReset !== today) {
     data.tasks.forEach((task) => (task.done = false));

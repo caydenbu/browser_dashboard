@@ -41,3 +41,21 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
+
+@media (max-width: 1200px) {
+    .calendar {
+        display: none;
+    }
+
+    .habits {
+        display: none;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    #search-date {
+        font-size: 7vw;
+    }
+}
