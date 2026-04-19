@@ -23,7 +23,7 @@ input.addEventListener("keydown", (e) => {
 
 // Tasks Logic
 
-const today = new Date().toISOString().split("T")[0];
+const today = new Date().toLocaleDateString("en-CA");
 
 let data = JSON.parse(localStorage.getItem("dailyTasks")) || {
     lastReset: today,
@@ -38,13 +38,13 @@ let data = JSON.parse(localStorage.getItem("dailyTasks")) || {
 
 function ResetData() {
     data.tasks.forEach((task) => (task.done = false));
+    date.lastReset = today;
     localStorage.setItem("dailyTasks", JSON.stringify(data));
 }
 
 // check if new day
 if (data.lastReset !== today) {
-    data.tasks.forEach((task) => (task.done = false));
-    data.lastReset = today;
+    ResetData();
 }
 
 // save updated version
