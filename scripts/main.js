@@ -1,10 +1,26 @@
 // Input Logic
 const input = document.getElementById("search-input");
 
+const shortcutLinks = [
+  "https://canvas.oregonstate.edu/",
+  "https://outlook.office.com/mail/",
+  "https://mail.google.com/mail/u/0/",
+  "https://calendar.google.com/calendar/u/0/r/week",
+  "https://github.com/caydenbu",
+];
+
 document.addEventListener("keydown", (e) => {
+  if (document.activeElement.tagName === "INPUT") return;
+
   if (e.key === "/") {
     e.preventDefault();
     document.getElementById("search-input").focus();
+    return;
+  }
+
+  const num = parseInt(e.key);
+  if (num >= 1 && num <= 5) {
+    window.location.href = shortcutLinks[num - 1];
   }
 });
 
@@ -19,6 +35,7 @@ input.addEventListener("keydown", (e) => {
       window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
     }
   }
+
 });
 
 // Tasks Logic
