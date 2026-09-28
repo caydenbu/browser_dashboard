@@ -55,23 +55,29 @@ if (Day.getHours() < 12) {
 // Classes List
 
 // Each class has a: name, start, end, length (1,2), color
-const CALCULUS = ["Calculus II", "9:00", "9:50", 1, "#f7a7a7"];
-const CALCULUS_REC = ["Calculus II", "4:00", "5:20", 2, "#f7a7a7"];
-const BOTANY = ["Botany", "2:00", "2:50", 1, "#D4FBCA"];
-const BOTANY_LAB = ["Botany", "9:00", "12:00", 3, "#D4FBCA"];
-const ENGINEERING = ["Engineering", "4:00", "4:50", 1, "#CAF0FB"];
-const ENGINEERING_STUDIO = ["Engineering", "2:00", "3:50", 2, "#CAF0FB"];
-const INDEGINOUS_HISTORY = ["History", "12:00", "1:50", 2, "#F2EAB9"];
+
+const LIGHTBLUE = "#89B4FA"
+const GREEN = "#A6E3A1"
+const ORANGE = "#E07055"
+const PURPLE = "#cf4aed"
+
+const CS162 = ["CS 162", "11:00", "11:50", 1, LIGHTBLUE];
+const CS162_LAB = ["CS 162 Lab", "4:00", "5:50", 2, LIGHTBLUE];
+const WRITING = ["Writing in Business", "10:00", "11:20", 2, PURPLE];
+const VECTOR_CALC = ["Vector Calc", "2:00", "2:50", 1, ORANGE];
+const VECTOR_CALC_REC = ["Vector Calc Rec", "2:00", "3:50", 2, ORANGE];
+const WORLD_GEO = ["World Geo", "3:00", "3:50", 1, GREEN];
+const WORLD_GEO_REC = ["World Geo Rec", "12:00", "1:50", 2, GREEN];
 
 const Classes = [
-    [CALCULUS, INDEGINOUS_HISTORY, BOTANY, ENGINEERING], // Shows Saturday as Monday
+    [CS162, VECTOR_CALC, WORLD_GEO, CS162_LAB], // Shows Saturday as Monday
 
-    [CALCULUS, INDEGINOUS_HISTORY, BOTANY, ENGINEERING], // Monday
-    [BOTANY_LAB], // Tuesday
-    [CALCULUS, INDEGINOUS_HISTORY, BOTANY], // Wednesday
-    [ENGINEERING_STUDIO, CALCULUS_REC], // Thursday
-    [CALCULUS, BOTANY, ENGINEERING], // Friday
-    [CALCULUS, INDEGINOUS_HISTORY, BOTANY, ENGINEERING], // Show Saturday is Monday
+    [CS162, VECTOR_CALC, WORLD_GEO, CS162_LAB], // Monday
+    [WRITING], // Tuesday
+    [CS162, VECTOR_CALC, WORLD_GEO], // Wednesday
+    [WRITING, VECTOR_CALC_REC], // Thursday
+    [CS162, WORLD_GEO_REC, VECTOR_CALC], // Friday
+    [CS162, VECTOR_CALC, WORLD_GEO, CS162_LAB], // Show Saturday as Monday
 ];
 
 // Display Classes
