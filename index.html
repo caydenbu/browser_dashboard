@@ -10,6 +10,7 @@
     <link href="css/calendar.css" rel="stylesheet" />
     <link href="css/search.css" rel="stylesheet" />
     <link href="css/habits.css" rel="stylesheet" />
+    <link href="css/vertical.css" rel="stylesheet" />
 
     <script src="scripts/api.js" defer></script>
     <script src="scripts/calendar.js" defer></script>
@@ -42,6 +43,13 @@
     </div>
     <div class="search">
         <h1 id="search-date">Today is, April 10</h1>
+        <div id="clock">
+            <div id="minute-hand" class="hand"></div>
+            <div id="hour-hand" class="hand"></div>
+            <div id="dot"></div>
+            <div id="hour-label" class="time-label"></div>
+            <div id="minute-label" class="time-label"></div>
+        </div>
         <input id="search-input" type="text" placeholder="Type / to search" />
         <div class="search-bookmarks">
             <a href="https://canvas.oregonstate.edu/" class="search-bookmark">
