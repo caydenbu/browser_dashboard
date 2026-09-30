@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -15,42 +17,78 @@ body {
     background-color: #232136;
 }
 
+/* clock is 30% of a 100vh body, so 1vh here is 1/30 of the clock's size */
 #clock{
+  position: relative;
   height: 30%;
   aspect-ratio: 1/1;
   border-radius: 999px;
   background-color: #4C4A5B;
-  border: 6px solid #6E6A86;
+  border: 0.8vh solid #6E6A86;
 }
 
 #dot{
-  position: relative;
-  height: 10%;
+  position: absolute;
+  height: 8%;
   aspect-ratio: 1/1;
   background-color:  #8B89A1;
   border-radius: 999px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.line-wrap{
+  position: absolute;
+  inset: 0;
 }
 
 .straight-lines{
   position: absolute;
-  height: 4%;
-  width: .5%;
-  transform: translate(-50%, -50%);
-  background-color: #8B89A1;
-
+  top: 0;
+  left: 50%;
+  height: 12%;
+  width: 3.5%;
+  transform: translateX(-50%);
+  background-color: #6E6A86;
 }
 
+.straight-lines.small{
+  height: 10%;
+  width: 2%;
+}
 
+/* hands pivot from their bottom center, which sits on the center of the clock */
+.hand{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%);
+  border-radius: 999px;
+}
 
+#hour-hand{
+  height: 28%;
+  width: 4%;
+  background-color: #77738F;
+}
 
+#minute-hand{
+  height: 42%;
+  width: 1.2%;
+  background-color: #6E6A86;
+}
 
-
-
-
-
-
-
-
+/* hour and minute numbers that orbit outside the clock, following their hands */
+.time-label{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 7vh;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: #6E6A86;
+}
