@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dashboard</title>
@@ -14,84 +13,87 @@
 
     <script src="scripts/api.js" defer></script>
     <script src="scripts/calendar.js" defer></script>
+    <script src="scripts/clock.js" defer></script>
     <script src="scripts/main.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="calendar">
-        <div class="calendar-container">
-            <div class="time-date">
-                <div id="hour-container" class="time-box">
-                    <p id="hour" class="time-upper">12</p>
-                    <p id="meridiem" class="time-lower">PM</p>
-                </div>
-                <div id="minute-container" class="time-box">
-                    <p id="minute" class="time-upper">44</p>
-                    <p id="day" class="time-lower">Tuesday</p>
-                </div>
-            </div>
-            <div id="schedule-container">
-                <div class="class-card" id="temp-card">
-                    <div class="class-card-color"></div>
-                    <div class="class-card-text">
-                        <p class="class-card-text-name">Temp Class</p>
-                        <p class="class-card-text-time">0:00-0:00</p>
-                    </div>
-                </div>
-            </div>
+      <div class="calendar-container">
+        <div class="time-date">
+          <div id="hour-container" class="time-box">
+            <p id="hour" class="time-upper">12</p>
+            <p id="meridiem" class="time-lower">PM</p>
+          </div>
+          <div id="minute-container" class="time-box">
+            <p id="minute" class="time-upper">44</p>
+            <p id="day" class="time-lower">Tuesday</p>
+          </div>
         </div>
+        <div id="schedule-container">
+          <div class="class-card" id="temp-card">
+            <div class="class-card-color"></div>
+            <div class="class-card-text">
+              <p class="class-card-text-name">Temp Class</p>
+              <p class="class-card-text-time">0:00-0:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="search">
-        <h1 id="search-date">Today is, April 10</h1>
-        <div id="clock">
-            <div id="minute-hand" class="hand"></div>
-            <div id="hour-hand" class="hand"></div>
-            <div id="dot"></div>
-            <div id="hour-label" class="time-label"></div>
-            <div id="minute-label" class="time-label"></div>
-        </div>
-        <input id="search-input" type="text" placeholder="Type / to search" />
-        <div class="search-bookmarks">
-            <a href="https://canvas.oregonstate.edu/" class="search-bookmark">
-                <img src="./imgs/canvas.png" alt="" width="60%" />
-            </a>
-            <a href="https://outlook.office.com/mail/" class="search-bookmark">
-                <img src="./imgs/outlook.png" alt="" width="60%" />
-            </a>
-            <a href="https://mail.google.com/mail/u/0/" class="search-bookmark">
-                <img src="./imgs/gmail.png" alt="" width="60%" />
-            </a>
-            <a href="https://calendar.google.com/calendar/u/0/r/week" class="search-bookmark">
-                <img src="./imgs/calendar.png" alt="" width="60%" />
-            </a>
-            <a href="https://github.com/caydenbu" class="search-bookmark">
-                <img src="./imgs/github.png" alt="" width="60%" />
-            </a>
-        </div>
+      <h1 id="search-date">Today is, April 10</h1>
+      <div id="clock">
+        <div id="minute-hand" class="hand"></div>
+        <div id="hour-hand" class="hand"></div>
+        <div id="dot"></div>
+        <div id="hour-label" class="time-label"></div>
+        <div id="minute-label" class="time-label"></div>
+      </div>
+      <input id="search-input" type="text" placeholder="Type / to search" />
+      <div class="search-bookmarks">
+        <a href="https://canvas.oregonstate.edu/" class="search-bookmark">
+          <img src="./imgs/canvas.png" alt="" width="60%" />
+        </a>
+        <a href="https://outlook.office.com/mail/" class="search-bookmark">
+          <img src="./imgs/outlook.png" alt="" width="60%" />
+        </a>
+        <a href="https://mail.google.com/mail/u/0/" class="search-bookmark">
+          <img src="./imgs/gmail.png" alt="" width="60%" />
+        </a>
+        <a
+          href="https://calendar.google.com/calendar/u/0/r/week"
+          class="search-bookmark"
+        >
+          <img src="./imgs/calendar.png" alt="" width="60%" />
+        </a>
+        <a href="https://github.com/caydenbu" class="search-bookmark">
+          <img src="./imgs/github.png" alt="" width="60%" />
+        </a>
+      </div>
     </div>
     <div class="habits" id="habits">
-        <div class="habits-title">Daily Habits</div>
-        <div class="habits-card">
-            <div class="habits-card-circle" onclick="CheckOffTask(1)"></div>
-            <p class="habits-card-title">Drink Water</p>
-        </div>
-        <div class="habits-card">
-            <div class="habits-card-circle" onclick="CheckOffTask(2)"></div>
-            <p class="habits-card-title">Climb or Run</p>
-        </div>
-        <div class="habits-card">
-            <div class="habits-card-circle" onclick="CheckOffTask(3)"></div>
-            <p class="habits-card-title">Do School Work</p>
-        </div>
-        <div class="habits-card">
-            <div class="habits-card-circle" onclick="CheckOffTask(4)"></div>
-            <p class="habits-card-title">Comp Sci Work</p>
-        </div>
-        <div class="habits-card">
-            <div class="habits-card-circle" onclick="CheckOffTask(5)"></div>
-            <p class="habits-card-title">Read/Audiobook</p>
-        </div>
+      <div class="habits-title">Daily Habits</div>
+      <div class="habits-card">
+        <div class="habits-card-circle" onclick="CheckOffTask(1)"></div>
+        <p class="habits-card-title">Drink Water</p>
+      </div>
+      <div class="habits-card">
+        <div class="habits-card-circle" onclick="CheckOffTask(2)"></div>
+        <p class="habits-card-title">Climb or Run</p>
+      </div>
+      <div class="habits-card">
+        <div class="habits-card-circle" onclick="CheckOffTask(3)"></div>
+        <p class="habits-card-title">Do School Work</p>
+      </div>
+      <div class="habits-card">
+        <div class="habits-card-circle" onclick="CheckOffTask(4)"></div>
+        <p class="habits-card-title">Comp Sci Work</p>
+      </div>
+      <div class="habits-card">
+        <div class="habits-card-circle" onclick="CheckOffTask(5)"></div>
+        <p class="habits-card-title">Read/Audiobook</p>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

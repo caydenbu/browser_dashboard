@@ -1,0 +1,12 @@
+{
+  "classes": [
+    {
+      "name": "EXAMPLE-CLASS",
+      "start-time": "11:xx",
+      "end-time": "12:xx",
+      "size": "(1-3) **Changes How big the size of the block is**",
+      "color": "HEXCODE",
+      "days": "MTWRF **Enter the initial of the days the class is on"
+    }
+  ]
+}

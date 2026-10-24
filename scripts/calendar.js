@@ -54,31 +54,17 @@ if (Day.getHours() < 12) {
 
 // Classes List
 
-// Each class has a: name, start, end, length (1,2), color
+// Each class has a: name, start-time, end-time, size (1-3), color, days
+// days uses R for Thursday, ex: "TR" is Tuesday and Thursday
+// Sunday and Saturday show Monday's classes
+const DAY_LETTERS = ["M", "M", "T", "W", "R", "F", "M"];
 
-const LIGHTBLUE = "#89B4FA"
-const GREEN = "#A6E3A1"
-const ORANGE = "#E07055"
-const PURPLE = "#cf4aed"
-
-const CS162 = ["CS 162", "11:00", "11:50", 1, LIGHTBLUE];
-const CS162_LAB = ["CS 162 Lab", "4:00", "5:50", 2, LIGHTBLUE];
-const WRITING = ["Writing in Business", "10:00", "11:20", 2, PURPLE];
-const VECTOR_CALC = ["Vector Calc", "2:00", "2:50", 1, ORANGE];
-const VECTOR_CALC_REC = ["Vector Calc Rec", "2:00", "3:50", 2, ORANGE];
-const WORLD_GEO = ["World Geo", "3:00", "3:50", 1, GREEN];
-const WORLD_GEO_REC = ["World Geo Rec", "12:00", "1:50", 2, GREEN];
-
-const Classes = [
-    [CS162, VECTOR_CALC, WORLD_GEO, CS162_LAB], // Shows Saturday as Monday
-
-    [CS162, VECTOR_CALC, WORLD_GEO, CS162_LAB], // Monday
-    [WRITING], // Tuesday
-    [CS162, VECTOR_CALC, WORLD_GEO], // Wednesday
-    [WRITING, VECTOR_CALC_REC], // Thursday
-    [CS162, WORLD_GEO_REC, VECTOR_CALC], // Friday
-    [CS162, VECTOR_CALC, WORLD_GEO, CS162_LAB], // Show Saturday as Monday
-];
+// times are 12 hour without AM/PM, so anything before 8 is treated as PM
+function TimeToMinutes(time) {
+    let [h, m] = time.split(":").map(Number);
+    if (h < 8) h += 12;
+    return h * 60 + m;
+}
 
 // Display Classes
 
@@ -92,19 +78,27 @@ let DAY_OF_WEEK = Day.getDay();
 // class name = child(1,0)
 // class time = child(1,1)
 
-for (let i = 0; i < Classes[DAY_OF_WEEK].length; i++) {
-    const CLONE = TEMP_CARD.cloneNode(true);
-    // Card Size
-    const DEFAULT = 18;
-    CLONE.style.height = DEFAULT * Classes[DAY_OF_WEEK][i][3] + "%";
+fetch("data/schedule.json", { cache: "no-cache" })
+    .then((res) => res.json())
+    .then((schedule) => {
+        const todaysClasses = schedule.classes
+            .filter((c) => c.days.includes(DAY_LETTERS[DAY_OF_WEEK]))
+            .sort((a, b) => TimeToMinutes(a["start-time"]) - TimeToMinutes(b["start-time"]));
 
-    // Class Color
-    CLONE.children[0].style.backgroundColor = Classes[DAY_OF_WEEK][i][4];
+        for (const c of todaysClasses) {
+            const CLONE = TEMP_CARD.cloneNode(true);
+            // Card Size
+            const DEFAULT = 18;
+            CLONE.style.height = DEFAULT * c.size + "%";
 
-    // Class Name and Time
-    CLONE.children[1].children[0].innerHTML = Classes[DAY_OF_WEEK][i][0];
-    CLONE.children[1].children[1].innerHTML =
-        Classes[DAY_OF_WEEK][i][1] + "-" + Classes[DAY_OF_WEEK][i][2];
+            // Class Color
+            CLONE.children[0].style.backgroundColor = c.color;
 
-    CONTAINER.appendChild(CLONE);
-}
+            // Class Name and Time
+            CLONE.children[1].children[0].innerHTML = c.name;
+            CLONE.children[1].children[1].innerHTML =
+                c["start-time"] + "-" + c["end-time"];
+
+            CONTAINER.appendChild(CLONE);
+        }
+    });
