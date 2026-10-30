@@ -2,6 +2,9 @@ let leader = false;
 
 // INPUT LISTENER
 document.body.addEventListener("keydown", (e) => {
+  // Dont catch keys while typing in the search bar
+  if (document.activeElement.tagName === "INPUT") return;
+
   // Toggle Display
   // if user presses space then t, it toggles the theme switcher
   if (e.key === " " || e.code === "Space") {
@@ -20,14 +23,14 @@ document.body.addEventListener("keydown", (e) => {
   if (e.key === "k" && themeToggled) {
     MoveUp();
   }
-  if (e.key === "Enter" || (e.code === "Enter" && themeToggled)) {
+  if ((e.key === "Enter" || e.code === "Enter") && themeToggled) {
     toggle_theme_switcher();
   }
 
   leader = false;
 });
 
-let themeToggled = true;
+let themeToggled = false;
 
 function toggle_theme_switcher() {
   HoverTheme();
@@ -71,6 +74,21 @@ function HoverTheme() {
   ChangeTheme(THEMES[hoveredIndex]);
 }
 
-function ChangeTheme(Theme) {
-  // change the theme
+// The name in the html is what the [data-theme] selectors in theme.css use
+function GetThemeName(Theme) {
+  return Theme.textContent.trim().toLowerCase();
 }
+
+function ChangeTheme(Theme) {
+  const NAME = GetThemeName(Theme);
+  document.documentElement.setAttribute("data-theme", NAME);
+  localStorage.setItem("theme", NAME);
+}
+
+// Load the saved theme, stays on the first theme if nothing is saved
+const SAVEDTHEME = localStorage.getItem("theme");
+hoveredIndex = Math.max(
+  Array.from(THEMES).findIndex((Theme) => GetThemeName(Theme) === SAVEDTHEME),
+  0,
+);
+HoverTheme();

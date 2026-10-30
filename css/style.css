@@ -1,44 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
-/* theme colors, swap these to change the whole dashboard */
-:root {
-  --bg: #232136;
-  --panel: rgba(0, 0, 0, 0.2);
-  --text: #f2e9ff;
-
-  --surface: #6e6a86;
-  --surface-dark: #4c4a5b;
-  --surface-light: #77738f;
-  --surface-lighter: #8b89a1;
-
-  --accent: #9bff82;
-  --accent-hover: #71c85a;
-}
-
-[data-theme="green"] {
-  --bg: #232136;
-  --panel: rgba(0, 0, 0, 0.2);
-  --text: #f2e9ff;
-
-  --surface: #6e6a86;
-  --surface-dark: #4c4a5b;
-  --surface-light: #77738f;
-  --surface-lighter: #8b89a1;
-
-  --accent: #9bff82;
-  --accent-hover: #71c85a;
-  --panel: rgba(0, 0, 0, 0.2);
-  --text: #f2e9ff;
-
-  --surface: #6e6a86;
-  --surface-dark: #4c4a5b;
-  --surface-light: #77738f;
-  --surface-lighter: #8b89a1;
-
-  --accent: #9bff82;
-  --accent-hover: #71c85a;
-}
-
 * {
   margin: 0;
   padding: 0;

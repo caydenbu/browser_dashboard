@@ -1,15 +1,103 @@
+/* theme colors, swap these to change the whole dashboard */
+:root,
+[data-theme="rose-pine"] {
+  --bg: #232136;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #f2e9ff;
+
+  --surface: #6e6a86;
+  --surface-dark: #4c4a5b;
+  --surface-light: #77738f;
+  --surface-lighter: #8b89a1;
+
+  --accent: #9bff82;
+  --accent-hover: #71c85a;
+}
+
+[data-theme="evergreen"] {
+  --bg: #0f2a1f;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #edfff3;
+
+  --surface: #2f7a56;
+  --surface-dark: #1c5239;
+  --surface-light: #3a8f66;
+  --surface-lighter: #5aab82;
+
+  --accent: #d4ff5c;
+  --accent-hover: #a3cc3a;
+}
+
+[data-theme="gruvbox-dark"] {
+  --bg: #282828;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #fbf1c7;
+
+  --surface: #96640f;
+  --surface-dark: #5a3d0c;
+  --surface-light: #a97416;
+  --surface-lighter: #d79921;
+
+  --accent: #fabd2f;
+  --accent-hover: #d79921;
+}
+
+[data-theme="catppuccin"] {
+  --bg: #1e1e2e;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #eff1f5;
+
+  --surface: #5f68bd;
+  --surface-dark: #3f4585;
+  --surface-light: #727bd0;
+  --surface-lighter: #b4befe;
+
+  --accent: #f5c2e7;
+  --accent-hover: #f38ba8;
+}
+
+[data-theme="github"] {
+  --bg: #161b22;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #f0f6fc;
+
+  --surface: #1a5bb8;
+  --surface-dark: #0d3b82;
+  --surface-light: #2f76d6;
+  --surface-lighter: #58a6ff;
+
+  --accent: #56d364;
+  --accent-hover: #2ea043;
+}
+
+[data-theme="dracula"] {
+  --bg: #282a36;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #f8f8f2;
+
+  --surface: #8560d6;
+  --surface-dark: #4f3a8a;
+  --surface-light: #9470e6;
+  --surface-lighter: #bd93f9;
+
+  --accent: #50fa7b;
+  --accent-hover: #ff79c6;
+}
+
 #theme-switcher-container {
-  display: flex;
+  display: none; /* opens with space then t, see theme.js */
   flex-direction: column;
   position: absolute;
   height: 50vh;
   aspect-ratio: 1.5/1;
+  max-width: 90vw; /* keeps it on screen on the vertical monitor */
+  z-index: 1; /* the habit and class cards have transforms and would paint on top */
 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background-color: #4c4a5b;
+  background-color: var(--surface-dark);
   box-shadow: 0px 0px 100px black;
   padding: 1%;
 }
@@ -17,12 +105,12 @@
 #theme-switcher-container h1 {
   font-size: 32px;
   font-weight: bold;
-  color: #f2e9ff;
+  color: var(--text);
 }
 
 #switcher {
   height: 90%;
-  border: 3px solid #77738f;
+  border: 3px solid var(--surface-light);
   padding: 2%;
 
   display: flex;
