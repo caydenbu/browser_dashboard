@@ -1,0 +1,29 @@
+#theme-switcher-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 50vh;
+  aspect-ratio: 1.5/1;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #4c4a5b;
+  box-shadow: 0px 0px 100px black;
+  padding: 1%;
+}
+
+#theme-switcher-container h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #f2e9ff;
+}
+
+#switcher {
+  height: 90%;
+  border: 2px solid #77738f;
+}
+
+.theme-choice {
+}

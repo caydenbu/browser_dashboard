@@ -1,69 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
+/* theme colors, swap these to change the whole dashboard */
+:root {
+  --bg: #232136;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #f2e9ff;
+
+  --surface: #6e6a86;
+  --surface-dark: #4c4a5b;
+  --surface-light: #77738f;
+  --surface-lighter: #8b89a1;
+
+  --accent: #9bff82;
+  --accent-hover: #71c85a;
+}
+
+[data-theme="green"] {
+  --bg: #232136;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #f2e9ff;
+
+  --surface: #6e6a86;
+  --surface-dark: #4c4a5b;
+  --surface-light: #77738f;
+  --surface-lighter: #8b89a1;
+
+  --accent: #9bff82;
+  --accent-hover: #71c85a;
+  --panel: rgba(0, 0, 0, 0.2);
+  --text: #f2e9ff;
+
+  --surface: #6e6a86;
+  --surface-dark: #4c4a5b;
+  --surface-light: #77738f;
+  --surface-lighter: #8b89a1;
+
+  --accent: #9bff82;
+  --accent-hover: #71c85a;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    color: #f2e9ff;
-    font-family: Lexend Deca;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: Lexend Deca;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    background-color: #232136;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: var(--bg);
 }
 
 .calendar {
-    width: 25%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+  width: 25%;
+  height: 100%;
+  background-color: var(--panel);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search {
-    width: 50%;
-    height: 100%;
+  width: 50%;
+  height: 100%;
 }
 
 .habits {
-    width: 25%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+  width: 25%;
+  height: 100%;
+  background-color: var(--panel);
 
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    flex-direction: column;
-    overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 @media (max-width: 1200px) {
-    .calendar {
-        display: none;
-    }
+  .calendar {
+    display: none;
+  }
 
-    .habits {
-        display: none;
-    }
+  .habits {
+    display: none;
+  }
 
-    .search {
-        width: 100%;
-    }
+  .search {
+    width: 100%;
+  }
 
-    #search-date {
-        font-size: 7vw;
-    }
+  #search-date {
+    font-size: 7vw;
+  }
 }
 
 /* Analog clock */
 /* clock size is set with --clock-size so it can be reused anywhere,
    the border and labels scale with it */
-#clock{
+#clock {
   display: none; /* only shows on the vertical layout, see vertical.css */
   --clock-size: 30vh;
   position: relative;
@@ -71,15 +110,15 @@ body {
   aspect-ratio: 1/1;
   flex-shrink: 0;
   border-radius: 999px;
-  background-color: #4C4A5B;
-  border: calc(var(--clock-size) * 0.027) solid #6E6A86;
+  background-color: var(--surface-dark);
+  border: calc(var(--clock-size) * 0.027) solid var(--surface);
 }
 
-#dot{
+#dot {
   position: absolute;
   height: 8%;
   aspect-ratio: 1/1;
-  background-color:  #8B89A1;
+  background-color: var(--surface-lighter);
   border-radius: 999px;
   top: 50%;
   left: 50%;
@@ -87,28 +126,28 @@ body {
   z-index: 1;
 }
 
-.line-wrap{
+.line-wrap {
   position: absolute;
   inset: 0;
 }
 
-.straight-lines{
+.straight-lines {
   position: absolute;
   top: 0;
   left: 50%;
   height: 12%;
   width: 3.5%;
   transform: translateX(-50%);
-  background-color: #6E6A86;
+  background-color: var(--surface);
 }
 
-.straight-lines.small{
+.straight-lines.small {
   height: 10%;
   width: 2%;
 }
 
 /* hands pivot from their bottom center, which sits on the center of the clock */
-.hand{
+.hand {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -117,20 +156,20 @@ body {
   border-radius: 999px;
 }
 
-#hour-hand{
+#hour-hand {
   height: 28%;
   width: 4%;
-  background-color: #77738F;
+  background-color: var(--surface-light);
 }
 
-#minute-hand{
+#minute-hand {
   height: 42%;
   width: 1.2%;
-  background-color: #6E6A86;
+  background-color: var(--surface);
 }
 
 /* hour and minute numbers that orbit outside the clock, following their hands */
-.time-label{
+.time-label {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -138,5 +177,5 @@ body {
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
-  color: #6E6A86;
+  color: var(--surface);
 }
